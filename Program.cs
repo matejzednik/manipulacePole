@@ -8,13 +8,28 @@
 7.Získání velikosti pole
 8.Získání počtu nenulových prvků*/
 
-
+Console.WriteLine("Hello World!");
 
 //1. Podprogram
-
-static int? pridaniPrvku(int?[] vysledek)
+int?[] pole = new int?[] { 1, 5, 3, 2, 4, 6, 7 };
+int?[] pridaniPrvku(int?[]vysledek)
 {
-    int?[] pole1 = new int?[] {1,5,3,2,4,6,7};
-    pole1 = pole1.Append(100).ToArray();
-    return pole1;
+    
+    pole = pole.Append(100).ToArray();
+    foreach (int? i in pole)
+    {
+        Console.WriteLine(i);
+    }
+    return pole;
+
 }
+pridaniPrvku(pole);
+
+Console.WriteLine("------------------");
+//2. Podprogram
+int?[] zmenaHodnotyPrvku(int?[] vysledek2)
+{
+    Array.Resize(ref pole, pole.Length + 1);
+    return pole;
+}
+zmenaHodnotyPrvku(pole);
